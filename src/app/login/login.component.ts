@@ -1,33 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserRegistration } from '../model/modelEntity';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   model: UserRegistration = { username: '', password: '' };
-  authentication: UserRegistration = {
-    username: 'Miriam',
-    password: 'angular',
-  };
+
   loginError: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private service: AuthService) {}
 
-  ngOnInit(): void {}
   submit() {
-    console.log(this.model);
-    if (
-      this.model.username === this.authentication.username &&
-      this.model.password === this.authentication.password
-    ) {
-      localStorage.setItem(
-        'authentication',
-        JSON.stringify(this.authentication)
-      );
+    if (this.service.submit(this.model.username, this.model.password)) {
+      localStorage.setItem('authentication', JSON.stringify(this.model));
       this.router.navigate(['/dashboard']);
     } else {
       this.loginError = true;

@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-menu',
@@ -7,20 +9,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() {}
+  constructor(private router: Router ) {}
 
   ngOnInit(): void {
     this.userLogged();
   }
-  userLogged() {
+
+  userLogged(): boolean {
     if (localStorage.getItem('authentication')) {
       return true;
     } else {
       return false;
     }
   }
-  logout() {
+  logout(): void {
     localStorage.removeItem('authentication');
-    // this.router.navigate(['/home'])
+    this.router.navigate(['/'])
   }
 }
