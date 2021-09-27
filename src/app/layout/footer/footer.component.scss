@@ -1,0 +1,9 @@
+@import '../../paleta.scss';
+
+footer{
+  background-color: $primary-color;
+  
+  position: absolute;
+  bottom:0;
+  width: 100%;
+}
