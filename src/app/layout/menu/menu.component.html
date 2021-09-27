@@ -5,21 +5,21 @@
      <img src="assets/imagenes/money-576443.png" alt="logo de la empresa">
      <h1>BANCO SOPLÓN</h1>
    </div>
-  <nav *ngIf="!userLogged()">
+  <nav *ngIf="!service.userLogged()">
      <ul>
       <li><a routerLink="/">Home</a></li>
       <li><a routerLink="/login">Login</a></li>
       <li><a routerLink="/acerca-de">Acerca de</a></li>
      </ul>
     </nav>
-    <nav *ngIf="userLogged()">
+    <nav *ngIf="service.userLogged()">
       <ul>
         <li><a routerLink="/galeria">Galería</a></li>
         <li><a routerLink="/perfil">Perfil</a></li>
         <li><a routerLink="/dashboard">Dashboard</a></li>
-        <li><a (click)="logout()">Logout</a></li>
+        <li><a (click)="service.logout()">Logout</a></li>
       </ul>
-      <p>Bienvenido!!!</p>
+      <p>Bienvenido {{username}}!!!</p>
   </nav>
   </div>
 

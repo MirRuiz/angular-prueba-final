@@ -17,7 +17,7 @@ export class LoginComponent {
 
   submit() {
     if (this.service.submit(this.model.username, this.model.password)) {
-      localStorage.setItem('authentication', JSON.stringify(this.model));
+      localStorage.setItem('authentication',this.model.username);
       this.router.navigate(['/dashboard']);
     } else {
       this.loginError = true;
