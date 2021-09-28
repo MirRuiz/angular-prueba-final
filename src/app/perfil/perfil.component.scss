@@ -1,0 +1,9 @@
+@import '../paleta.scss';
+
+p{
+  display:flex;
+  justify-content: center;
+  margin:60px 20px;
+  font-weight: $font-weight-primary;
+  font-size: 40px;
+}

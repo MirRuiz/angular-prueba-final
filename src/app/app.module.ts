@@ -15,6 +15,8 @@ import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { DasboardComponent } from './dashboard/dashboard.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     AcercaDeComponent,
     DasboardComponent,
     GaleriaComponent,
-    PerfilComponent
+    PerfilComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     BrowserAnimationsModule,
     FormsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

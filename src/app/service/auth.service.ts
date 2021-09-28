@@ -26,7 +26,7 @@ export class AuthService {
   }
   logout(): void {
     localStorage.removeItem('authentication');
-    this.router.navigate(['/']);
+    this.router.navigate(['/home']);
   }
 
   getUserName(): any {

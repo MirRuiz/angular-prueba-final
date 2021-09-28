@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { DasboardComponent } from './dashboard/dashboard.component';
 import { GaleriaComponent } from './galeria/galeria.component';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
+  {path: 'home', component:HomeComponent},
   {path: 'login', component:LoginComponent},
   {path: 'acerca-de', component:AcercaDeComponent},
   {path: 'dashboard', component:DasboardComponent},

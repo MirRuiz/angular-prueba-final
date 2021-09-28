@@ -1,18 +1,5 @@
-<!-- <div>
-  <form (submit) ="submit()">
-    <div>
-      <label  >Name</label>
-      <input name="username" [(ngModel)]="model.username"/>
-    </div>
-    <div>
-      <label>Pasword</label>
-      <input name="password" [(ngModel)]="model.password"/>
-    </div>
-    <button type="submit">Login</button>
-  </form>
-  <p *ngIf = "loginError">Usuario o contraseña incorrectos</p>
-</div> -->
-<div>
+
+<form #inputValue ="ngForm">
   <mat-form-field>
     <input
       name="name"
@@ -36,15 +23,16 @@
       [(ngModel)]="model.password"
       type="password"
       placeholder="Ingrese contraseña"
-      minlength="4"
       required
     />
   </mat-form-field>
+  <div>
   <div *ngIf="inputPassword.invalid && inputPassword.touched">
     La contraseña es obligatorio
   </div>
+</div>
 
-  <button mat-raised-button color="primary" type="submit" (click)="submit()">
+  <button [disabled]="inputValue.invalid" mat-raised-button color="primary" type="submit" (click)="submit()">
     Login
   </button>
-</div>
+</form>
